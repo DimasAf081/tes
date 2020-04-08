@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width"> 
+        <title></title>
+    </head>
+    <script>
+        function cekkomisi(){
+            var orang = document.form.jmlorang.value;
+            var jual = document.form.jmlpenjualan.value;
+            var komisi;
+            var node1 = document.createElement("p");
+            var node2 = document.createElement("p");
+            var node3 = document.createElement("p");
+                
+            if(orang < 10){
+                    
+                komisi = jual * 0.05;                 
+                node1.appendChild(document.createTextNode("Jumlah Orang : " + orang ));                             
+                node2.appendChild(document.createTextNode("Jumlah Penjualan : " + jual ));                             
+                node3.appendChild(document.createTextNode("Hasil Komisi : " + komisi ));                             
+                document.getElementById("form").appendChild(node1);
+                document.getElementById("form").appendChild(node2);
+                document.getElementById("form").appendChild(node3);
+            }
+            else if(orang >=10 && orang <=50){ 
+                if(jual<1000000){
+                    komisi = jual * 0.10;                 
+                    node1.appendChild(document.createTextNode("Jumlah Orang : " + orang ));                             
+                    node2.appendChild(document.createTextNode("Jumlah Penjualan : " + jual ));                             
+                    node3.appendChild(document.createTextNode("Hasil Komisi : " + komisi ));                             
+                    document.getElementById("form").appendChild(node1);
+                    document.getElementById("form").appendChild(node2);
+                    document.getElementById("form").appendChild(node3);
+                }
+                else{
+                    komisi = jual * 0.125;                 
+                    node1.appendChild(document.createTextNode("Jumlah Orang : " + orang ));                             
+                    node2.appendChild(document.createTextNode("Jumlah Penjualan : " + jual ));                             
+                    node3.appendChild(document.createTextNode("Hasil Komisi : " + komisi ));                             
+                    document.getElementById("form").appendChild(node1);
+                    document.getElementById("form").appendChild(node2);
+                    document.getElementById("form").appendChild(node3);
+                }  
+        
+            }
+            else{
+                    komisi = jual * 0.15;                 
+                    node1.appendChild(document.createTextNode("Jumlah Orang : " + orang ));                             
+                    node2.appendChild(document.createTextNode("Jumlah Penjualan : " + jual ));                             
+                    node3.appendChild(document.createTextNode("Hasil Komisi : " + komisi ));                             
+                    document.getElementById("form").appendChild(node1);
+                    document.getElementById("form").appendChild(node2);
+                    document.getElementById("form").appendChild(node3);
+            }  
+        }    
+            
+
+    </script>
+    <body>
+        <h1>Aplikasi Sederhana Hitung Komisi MLM</h1>
+        <hr />
+        <form name="form" id="form">
+            Jumlah Orang : <input type="text" name="jmlorang" placeholder="masukkan jumlah">
+            Jumlah Penjualan : <input type="text" name="jmlpenjualan" placeholder="masukkan jumlah">
+            <br><input type="button" value="Submit" onclick="cekkomisi()" style="margin: 20px 0px;">
+        </form>
+    </body>
+
+    
+</html>
